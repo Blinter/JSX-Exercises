@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Part 2</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+
+<body>
+
+  <h1>Part 2</h1>
+  <div id="root"> <!-- component will go in this div --> </div>
+</body>
+<!-- add script tags for your components here -->
+<script type="text/babel">
+  const App = (props) => {
+    // Define a Tweet component which takes as props the username of the user 
+    // who wrote the tweet, the name of the user who wrote the tweet, the date
+    // of the tweet, and the message being tweeted.
+    return (
+      <div>
+        <span className="tweetMessage">Tweet</span>
+        <ul className="newTweet">
+          <li className="username">Username: {props.username}</li>
+          <li className="name">Name: {props.name}</li>
+          <li className="date">Date: {props.date}</li>
+          <li className="message">Tweet Message: {props.message}</li>
+        </ul>
+        <hr/>
+      </div>
+    );
+  };
+  const rootElement = document.getElementById('root');
+
+  const pseudoData = [
+    { username: "alice0192", name: "Alice", date: "2 minutes ago", message: "TEST 1" },
+
+    { username: "bob023", name: "Bob", date: "5 minutes ago", message: "TEST 2" },
+    { username: "charles123", name: "Caharlie", date: "15 minutes ago", message: "TEST 3" }
+  ];
+  if (rootElement) {
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(
+      <div style={{ backgroundColor: 'black', color: 'white' }}>
+        {pseudoData.map((data, index) => (
+          <App key={index} username={data.username} name={data.name} date={data.date} message={data.message} />
+        ))}
+      </div>
+    );
+  } else {
+    console.error("Could not find root element");
+  }
+</script>
+
+</html>

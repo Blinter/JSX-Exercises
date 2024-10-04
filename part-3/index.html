@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Part 3</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+
+
+<body>
+
+  <h1>Part 3</h1>
+
+  <div id="root"> <!-- component will go in this div --> </div>
+
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js">
+  </script>
+
+  <script src="https://unpkg.com/babel-standalone"></script>
+
+  <!-- add script tags for your components here -->
+  <script type="text/babel">
+    const App = (props) => {
+      const personNameTruncated = props.name.length > 8 ? props.name.substring(0, 6) : props.name;
+      const actionMessage = props.age >= 18 ? "please go vote!" : "you must be 18";
+      // Create a component called Person. Inside of this component, render a p 
+      // tag which displays “Learn some information about this person”. Each 
+      // person should have name and age properties.
+
+      // If the person is over 18 years old, display an additional h3 that says 
+      // “please go vote!”. Otherwise, display an h3 that says “you must be 
+      // 18”.  If the person’s name is longer than 8 characters, only display // the first six characters of their name.
+
+      // Add a property called hobbies to your Person component that accepts an // array of hobbies (an array of strings). Your Person component should 
+      // list each one of these hobbies as an li.
+      return (
+        <div className="personBlock">
+          <p className="infoPerson">Learn some information about this person</p><br />
+          <span className="personLabel">Name: </span><span className="personValue">{personNameTruncated}</span><br />
+          <span className="personLabel">Age: </span><span className="personValue">{props.age}</span><br />
+          <h3>{actionMessage}</h3><br />
+          <span className="personHobbies">Hobbies:</span>
+          <ul className="hobbies">
+            {props.hobbies.map(item => <li className="hobbyName">{item}</li>)}
+          </ul>
+          <hr />
+        </div>
+      );
+    };
+
+    const rootElement = document.getElementById('root');
+
+    const pseudoData = [
+      { name: "AliceNameLongerThan8", age: 17, hobbies: ["Swimming", "Skiing"] },
+      { name: "Bob", age: 18, hobbies: ["Biking", "Mountain-Climbing"] },
+      { name: "Caharlie", age: 19, hobbies: ["Programming", "Playing Video Games"] }
+    ];
+    if (rootElement) {
+      const root = ReactDOM.createRoot(rootElement);
+      root.render(
+        <div style={{ backgroundColor: 'black', color: 'white' }}>
+          {pseudoData.map(data => (
+            <App name={data.name} age={data.age} hobbies={data.hobbies} />
+          ))}
+        </div>
+      );
+    } else {
+      console.error("Could not find root element");
+    }
+  </script>
+
+</body>
+
+</html>

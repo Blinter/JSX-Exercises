@@ -1,0 +1,34 @@
+/* Style your Tweet component using a CSS class. */
+body {
+    background-color: black;
+}
+
+.tweetMessage {
+    font-size: 64px;
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+li {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 32px;
+}
+
+.username {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.name {
+    color: #657786;
+    margin-right: 5px;
+}
+
+.date {
+    color: #657786;
+}
+
+.message {
+    font-size: 48px;
+    list-style: disc;
+}

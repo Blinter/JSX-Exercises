@@ -1,0 +1,33 @@
+/* Style your Tweet component using a CSS class. */
+body {
+    background-color: black;
+    color: white;
+}
+
+.personBlock {
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.infoPerson {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 32px;
+}
+
+.personLabel {
+    font-size: 24px;
+}
+
+.personValue {
+    font-size: 16px;
+}
+
+.personHobbies {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.hobbyName {
+    font-size: 32px;
+    list-style: disc;
+}
