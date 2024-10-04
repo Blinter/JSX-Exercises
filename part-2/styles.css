@@ -1,6 +1,7 @@
 /* Style your Tweet component using a CSS class. */
 body {
     background-color: black;
+    color: white;
 }
 
 .tweetMessage {
